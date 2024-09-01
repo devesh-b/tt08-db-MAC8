@@ -17,4 +17,4 @@ The project will be used to perform mac operations on 8 bit unsigned integers. T
 
 ## External hardware
 
-No external hardware is used for this project
+No external hardware is used for this project.

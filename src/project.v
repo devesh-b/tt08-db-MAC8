@@ -16,19 +16,49 @@ module tt_um_db_MAC (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
+//wire [15:0]data_in;
+wire [15:0] c;
+wire [15:0]wa,wb;
 
-  MAC8 m1(
-      .A(),B
-    input SYS_CLK, SYS_RST,
-    inout C[7:0],
-    output reg [7:0] Accumulator
-    );
+reg [7:0] reg_a,reg_b;
+wire [15:0] W,Sum;
+reg [15:0] Out;
 
 
-  // List all unused inputs to prevent warnings
-  wire _unused = uio_oe;
+assign uio_oe = clk?8'hFF:8'h00;
 
+  
+always @(posedge clk or negedge rst_n) begin
+      
+        if (!rst_n) begin
+            reg_a <= 0;
+				reg_b <= 0;
+        end else begin
+            reg_a<=ui_in;
+				reg_b<=uio_in;
+        end
+    end
+
+vedic_8bit_multiplier m1(reg_a, reg_b, W);
+reversible_16bit_adder a1 (
+    .A(Out),
+    .B(W),
+    .Cin(1'b0),      // Assuming the adder has a carry-in input
+    .Sum(Sum)     // Assuming the adder has a carry-out output
+);
+
+always @(negedge clk or negedge rst_n) begin
+	     
+        if (!rst_n) begin
+            Out<=0;
+        end else begin
+            Out<=Sum;
+        end
+    end
+
+
+assign {uio_out,uo_out}= Out;
+	 
+wire _unused = &{ena, 1'b0};
+   
 endmodule

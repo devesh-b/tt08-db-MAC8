@@ -8,13 +8,13 @@ module reversible_full_adder (
     output reg Cout   // Carry-out
 );
 
-wire g[1:0];
-wire n[1:0];
+wire [1:0]g;
+wire [1:0]n;
 
 peres_gate p1(A, B, Ctrl, g[0], n[0], n[1]);
 peres_gate p2(n[0], Cin,  n[1], g[1], S, Cout);
 
-	wire _unused = &{g[1:0]};
+wire _unused = &{g[1:0]};
 
 
 endmodule

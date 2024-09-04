@@ -12,6 +12,8 @@ module vedic_2bit_multiplier(
 	 peres_gate p2(i[3], i[2], 1'b0, g[2], g[3], a[2]);
 	 peres_gate p3(a[0], a[1], 1'b0, g[4], P[1], a[3]);
 	 feynman_gate f1(a[3], a[2], P[3], P[2]);
+
+	wire _unused = &{g[4:0]};
 	 
 
 endmodule

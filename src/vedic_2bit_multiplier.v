@@ -3,9 +3,9 @@ module vedic_2bit_multiplier(
     output reg [3:0] P
 );
 
-	 wire g[4:0];
-	 wire i[3:1];
-	 wire a[3:0];
+	wire [4:0]g;
+	wire [3:1]i;
+	wire [3:0]a;
 	 
 	 BVPPG_gate b1(A[0], B[0], 1'b0, B[1], 1'b0, g[0], i[1], P[0], i[2], a[0]);
 	 peres_gate p1(A[1], i[1], 1'b0, i[3], g[1], a[1]);

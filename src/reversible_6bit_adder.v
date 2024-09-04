@@ -3,7 +3,7 @@ module reversible_6bit_adder (
     input  wire [5:0] B,   // 6-bit input B
     input  wire [5:0] C,   // 6-bit input C
     output      [5:0] Sum, // 6-bit Sum
-	 output            Carry
+    output            Carry
 );
 
 // Intermediate wires for full adders

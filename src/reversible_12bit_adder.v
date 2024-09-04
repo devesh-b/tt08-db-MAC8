@@ -19,5 +19,5 @@ assign Sum[0] = sum1[0];
 reversible_6bit_adder fa13(sum1[6:1], carry1[5:0], {carry2[4:0],1'b0}, Sum[6:1], carry2[5]);
 reversible_6bit_adder fa14({1'b0, sum1[11:7]}, carry1[11:6], carry2[10:5], {carry2[12], Sum[11:7]}, carry2[11]);
 
-
+    wire _unused = &{carry2[12:11]};
 endmodule

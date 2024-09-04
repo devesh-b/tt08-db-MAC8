@@ -16,17 +16,12 @@ module tt_um_db_MAC (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-//wire [15:0]data_in;
-wire [15:0] c;
-wire [15:0]wa,wb;
-
 reg [7:0] reg_a,reg_b;
 wire [15:0] W,Sum;
 reg [15:0] Out;
 
 
-assign uio_oe = clk?8'hFF:8'h00;
-
+assign uio_oe = clk ? 8'hFF : 8'h00;
   
 always @(posedge clk or negedge rst_n) begin
       
@@ -56,8 +51,7 @@ always @(negedge clk or negedge rst_n) begin
         end
     end
 
-
-assign {uio_out,uo_out}= Out;
+	 assign {uio_out,uo_out}= Out;
 	 
 wire _unused = &{ena, 1'b0};
    

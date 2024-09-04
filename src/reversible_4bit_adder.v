@@ -16,7 +16,3 @@ wire [2:0] C;
     reversible_full_adder fa3 (A[3], B[3], C[2], 1'b0, Sum[3], Carry);
 
 endmodule
-
-
-
-endmodule

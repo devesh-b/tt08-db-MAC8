@@ -5,7 +5,8 @@ module vedic_8bit_multiplier (
 );
 
     // Intermediate partial products
-	wire [7:0] P0, P1, P2, P3;
+	wire [7:0]  P1, P2, P3;
+	wire [7:4]  P0;
 
     // 4x4 multipliers for partial products
     vedic_4bit_multiplier U0 (A[3:0], B[3:0], {P0[7:4], P[3:0]});

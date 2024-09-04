@@ -16,7 +16,7 @@ module vedic_4bit_multiplier (
     vedic_2bit_multiplier U3 (A[3:2], B[3:2], P3[3:0]);
 
     buf b[1:0](P[1:0], P0[1:0]);
-	 
-	 reversible_6bit_adder a1({P3, P0[3:2]}, {2'b0, P2}, {2'b0, P1}, P[7:2], temp);
+    reversible_6bit_adder a1({P3, P0[3:2]}, {2'b0, P2}, {2'b0, P1}, P[7:2], temp);
+    wire _unused = &{temp};
 
 endmodule

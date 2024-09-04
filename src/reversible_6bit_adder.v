@@ -21,5 +21,5 @@ reversible_full_adder fa7(sum1[1], carry1[0], 1'b0, 1'b0, Sum[1], carry2[0]);
 reversible_full_adder f[11:8](sum1[5:2], carry1[4:1], carry2[3:0], 1'b0, Sum[5:2], carry2[4:1]);
 reversible_full_adder fa12(1'b0, carry1[5], carry2[4], 1'b0,  Carry, carry2[5]);
 
-
+	wire _unused = &{carry2[5]};
 endmodule

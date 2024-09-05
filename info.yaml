@@ -18,17 +18,6 @@ project:
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "project.v"
-    - "reversible_16bit_adder.v"
-    - "reversible_12bit_adder.v"
-    - "reversible_6bit_adder.v"
-    - "reversible_4bit_adder.v"
-    - "reversible_full_adder.v"
-    - "vedic_8bit_multiplier.v"
-    - "vedic_4bit_multiplier.v"
-    - "vedic_2bit_multiplier.v"
-    - "feynman_gate.v"
-    - "peres_gate.v"
-    - "BVPPG_gate.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
